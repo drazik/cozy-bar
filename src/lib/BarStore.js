@@ -95,6 +95,14 @@ export default class BarStore {
   logout () {
     stack.logout()
   }
+
+  reset () {
+    this.claudyActions = null
+    this.settingsData = null
+    this.helpLink = ''
+    this.settingsAppURL = ''
+    this.contextNoExist = undefined
+  }
 }
 
 export class Provider extends Component {

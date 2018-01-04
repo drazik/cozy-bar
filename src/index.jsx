@@ -149,4 +149,10 @@ const updateAccessToken = accessToken => {
   stack.updateAccessToken(accessToken)
 }
 
-module.exports = { init, version: __VERSION__, ...api(reduxStore), updateAccessToken }
+const destroyBar = _ => {
+  barStore.reset()
+  // Vider le store redux
+  // Supprimer la bar du DOM
+}
+
+module.exports = { init, version: __VERSION__, ...api(reduxStore), updateAccessToken, destroyBar }
